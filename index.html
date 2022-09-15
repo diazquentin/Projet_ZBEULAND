@@ -4,14 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Connexion</title>
+    <title>Accueil</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+
     <!--Inspired from Themeforest Template-->
     <link href='https://unicons.iconscout.com/release/v3.0.6/css/line.css' rel='stylesheet'>
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+    <!-- <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet"> -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.jshttps://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.jshttps://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"> -->
 
     <script src="script.js"></script>
 
@@ -22,9 +28,7 @@
     <aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
         <i class="uil-bars close-aside d-md-none d-lg-none" data-close="show-side-navigation1"></i>
         <div class="sidebar-header d-flex justify-content-center align-items-center px-3 py-4">
-            <img class="rounded-pill img-fluid" width="65"
-                src="./img/3.png"
-                alt="">
+            <img class="rounded-pill img-fluid" width="65" src="./img/3.png" alt="">
             <div class="ms-2">
                 <h5 class="fs-6 mb-0">
                     <a class="text-decoration-none" href="#">Zbeuland Society</a>
@@ -38,14 +42,17 @@
         </div>
 
         <ul class="categories list-unstyled">
-            <li class="has-dropdown">
-                <i class="uil-estate fa-fw"></i><a href="#"> Dashboard</a>
-                <ul class="sidebar-dropdown list-unstyled">
-                    <li><a href="#">Lorem ipsum</a></li>
-                    <li><a href="#">ipsum dolor</a></li>
-                    <li><a href="#">dolor ipsum</a></li>
-                    <li><a href="#">amet consectetur</a></li>
-                    <li><a href="#">ipsum dolor sit</a></li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    Dropdown
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark">
+                    <li><a class="dropdown-item" href="#">Lorem ipsum</a></li>
+                    <li><a class="dropdown-item" href="#">ipsum dolor</a></li>
+                    <li><a class="dropdown-item" href="#">dolor ipsum</a></li>
+                    <li><a class="dropdown-item" href="#">amet consectetur</a></li>
+                    <li><a class="dropdown-item" href="#">ipsum dolor sit</a></li>
                 </ul>
             </li>
             <li class="">
@@ -143,7 +150,7 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false">
-                                Settings
+                                Paramètres
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
@@ -178,8 +185,8 @@
         <div class="p-4">
             <div class="welcome">
                 <div class="content rounded-3 p-3">
-                    <h1 class="fs-3">Welcome to Dashboard</h1>
-                    <p class="mb-0">Hello Jone Doe, welcome to your awesome dashboard!</p>
+                    <h1 class="fs-3">Accueil</h1>
+                    <!-- <p class="mb-0">Hello Jone Doe, welcome to your awesome dashboard!</p> -->
                 </div>
             </div>
 
@@ -190,7 +197,7 @@
                             <i class="uil-envelope-shield fs-2 text-center bg-primary rounded-circle"></i>
                             <div class="ms-3">
                                 <div class="d-flex align-items-center">
-                                    <h3 class="mb-0">1,245</h3> <span class="d-block ms-2">Emails</span>
+                                    <h3 class="mb-0">1,245</h3> <span class="d-block ms-2">Messages</span>
                                 </div>
                                 <p class="fs-normal mb-0">Lorem ipsum dolor sit amet</p>
                             </div>
@@ -201,7 +208,7 @@
                             <i class="uil-file fs-2 text-center bg-danger rounded-circle"></i>
                             <div class="ms-3">
                                 <div class="d-flex align-items-center">
-                                    <h3 class="mb-0">34</h3> <span class="d-block ms-2">Projects</span>
+                                    <h3 class="mb-0">34</h3> <span class="d-block ms-2">Nombre de rdv en attente</span>
                                 </div>
                                 <p class="fs-normal mb-0">Lorem ipsum dolor sit amet</p>
                             </div>
@@ -212,7 +219,7 @@
                             <i class="uil-users-alt fs-2 text-center bg-success rounded-circle"></i>
                             <div class="ms-3">
                                 <div class="d-flex align-items-center">
-                                    <h3 class="mb-0">5,245</h3> <span class="d-block ms-2">Users</span>
+                                    <h3 class="mb-0">5,245</h3> <span class="d-block ms-2">Médecin disponible</span>
                                 </div>
                                 <p class="fs-normal mb-0">Lorem ipsum dolor sit amet</p>
                             </div>
@@ -221,7 +228,7 @@
                 </div>
             </section>
 
-            <section class="charts mt-4">
+            <!-- <section class="charts mt-4">
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="chart-container rounded-2 p-3">
@@ -236,44 +243,22 @@
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> -->
 
             <section class="admins mt-4">
                 <div class="row">
                     <div class="col-md-6">
-                        <div class="box">
+                        <div id="list-practitioner" class="box">
                             <!-- <h4>Admins:</h4> -->
-                            <div class="admin d-flex align-items-center rounded-2 p-3 mb-4">
+                            <div id="template-practitioner" class="admin d-flex align-items-center rounded-2 p-3 mb-4">
                                 <div class="img">
                                     <img class="img-fluid rounded-pill" width="75" height="75"
                                         src="https://uniim1.shutterfly.com/ng/services/mediarender/THISLIFE/021036514417/media/23148906966/small/1501685402/enhance"
                                         alt="admin">
                                 </div>
                                 <div class="ms-3">
-                                    <h3 class="fs-5 mb-1">Joge Lucky</h3>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur elit.</p>
-                                </div>
-                            </div>
-                            <div class="admin d-flex align-items-center rounded-2 p-3 mb-4">
-                                <div class="img">
-                                    <img class="img-fluid rounded-pill" width="75" height="75"
-                                        src="https://uniim1.shutterfly.com/ng/services/mediarender/THISLIFE/021036514417/media/23148907137/small/1501685404/enhance"
-                                        alt="admin">
-                                </div>
-                                <div class="ms-3">
-                                    <h3 class="fs-5 mb-1">Joge Lucky</h3>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur elit.</p>
-                                </div>
-                            </div>
-                            <div class="admin d-flex align-items-center rounded-2 p-3">
-                                <div class="img">
-                                    <img class="img-fluid rounded-pill" width="75" height="75"
-                                        src="https://uniim1.shutterfly.com/ng/services/mediarender/THISLIFE/021036514417/media/23148907019/small/1501685403/enhance"
-                                        alt="admin">
-                                </div>
-                                <div class="ms-3">
-                                    <h3 class="fs-5 mb-1">Joge Lucky</h3>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur elit.</p>
+                                    <h3 class="name fs-5 mb-1">-</h3>
+                                    <p class=" telecom mb-0">-</p>
                                 </div>
                             </div>
                         </div>
@@ -281,39 +266,6 @@
                     <div class="col-md-6">
                         <div class="box">
                             <!-- <h4>Moderators:</h4> -->
-                            <div class="admin d-flex align-items-center rounded-2 p-3 mb-4">
-                                <div class="img">
-                                    <img class="img-fluid rounded-pill" width="75" height="75"
-                                        src="https://uniim1.shutterfly.com/ng/services/mediarender/THISLIFE/021036514417/media/23148907114/small/1501685404/enhance"
-                                        alt="admin">
-                                </div>
-                                <div class="ms-3">
-                                    <h3 class="fs-5 mb-1">Joge Lucky</h3>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur elit.</p>
-                                </div>
-                            </div>
-                            <div class="admin d-flex align-items-center rounded-2 p-3 mb-4">
-                                <div class="img">
-                                    <img class="img-fluid rounded-pill" width="75" height="75"
-                                        src="https://uniim1.shutterfly.com/ng/services/mediarender/THISLIFE/021036514417/media/23148907086/small/1501685404/enhance"
-                                        alt="admin">
-                                </div>
-                                <div class="ms-3">
-                                    <h3 class="fs-5 mb-1">Joge Lucky</h3>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur elit.</p>
-                                </div>
-                            </div>
-                            <div class="admin d-flex align-items-center rounded-2 p-3">
-                                <div class="img">
-                                    <img class="img-fluid rounded-pill" width="75" height="75"
-                                        src="https://uniim1.shutterfly.com/ng/services/mediarender/THISLIFE/021036514417/media/23148907008/medium/1501685726/enhance"
-                                        alt="admin">
-                                </div>
-                                <div class="ms-3">
-                                    <h3 class="fs-5 mb-1">Joge Lucky</h3>
-                                    <p class="mb-0">Lorem ipsum dolor sit amet consectetur elit.</p>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -352,17 +304,24 @@
                 </div>
             </section>
 
-            <section class="charts mt-4">
+            <!-- <section class="charts mt-4">
                 <div class="chart-container p-3">
                     <h3 class="fs-6 mb-3">Chart title number three</h3>
                     <div style="height: 300px">
                         <canvas id="chart3" width="100%"></canvas>
                     </div>
                 </div>
-            </section>
+            </section> -->
         </div>
     </section>
 
 </body>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="function.js"></script>
+<script>
+    $(document).ready(function () {
+        getPractitioner();
+    });
+</script>
 
 </html>
