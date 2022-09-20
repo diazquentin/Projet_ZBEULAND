@@ -12,3 +12,11 @@ function getPractitioner() {
     })
 }
 
+function getNbPractitioner() {
+    $.get(BASE_URL +"practitioner", function (result) {
+        console.log(result.length);
+        let count = find(".nbPractitioner");
+        count.replace(/5,245/i, result.length);
+    })
+}
+
