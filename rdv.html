@@ -163,10 +163,8 @@
 
     </section>
 
-    <!-- Cuerpo principal de la apliación -->
     <div class="container" id="principal">
 
-        <!-- añadir un contacto a la agenda -->
         <div class="col-sm-5" style="margin-left : 50px;">
             <div class="panel panel-default">
                 <div class="panel-heading">
@@ -175,48 +173,55 @@
                 <div class="panel-body">
 
                     <div class="form-group">
-                        <input class="form-control" placeholder="Nom" v-model="contacto.nombre">
+                        <input class="form-control" placeholder="Nom" v-model="contact.nom">
                     </div>
 
                     <div class="form-group">
-                        <input class="form-control" placeholder="Prénom" v-model="contacto.apellidos">
+                        <input class="form-control" placeholder="Prénom" v-model="contact.prenom">
                     </div>
 
                     <div class="form-group">
-                        <input type="date" class="form-control" placeholder="F.nacimiento"
-                            v-model="contacto.fnacimiento">
+                        <input type="date" class="form-control" placeholder="F.naissance" v-model="contact.debutRdv">
+                    </div>
+                    <div class="form-group">
+                        <input type="date" class="form-control" placeholder="F.naissance" v-model="contact.finRdv">
                     </div>
 
                     <div class="form-group">
-                        <input class="form-control" placeholder="N° Téléphone" v-model="contacto.telefono">
+                        <input class="form-control" placeholder="N° Téléphone" v-model="contact.tel">
                     </div>
 
-                    <button class="btn btn-primary" v-on:click="addContacto">Ajouter</button>
+                    <button class="btn btn-primary" v-on:click="addAppointment">Ajouter</button>
 
                 </div>
             </div>
             <!-- <pre>{{ $data | json }}</pre> -->
         </div>
 
-        <!-- Mostrar los contatos -->
         <div class="col-sm-5">
             <div class="list-group">
-                <a href="#" class="list-group-item" v-for="(contacto, index) in agenda">
-                    <h4 class="list-group-item-heading">
-                        <i class="glyphicon glyphicon-user"></i> {{ contacto.nombre }}
-                    </h4>
-                    <p class="list-group-item-text" v-if="contacto.apellidos">{{ contacto.apellidos }}</p>
+                <div class="rdv"  v-for="(rdv, index) in agenda">
+                    <a href="#" class="list-group-item">
+                        <h4 class="list-group-item-heading">
+                            <i class="glyphicon glyphicon-user"></i> {{ rdv.nom }}
+                        </h4>
+                        <p class="list-group-item-text" v-if="rdv.prenom">{{ rdv.prenom }}</p>
 
-                    <h5>
-                        <i class="glyphicon glyphicon-calendar" v-if="contacto.fnacimiento"></i>
-                        {{ contacto.fnacimiento }}
-                    </h5>
-                    <h5>
-                        <i class="glyphicon glyphicon-earphone" v-if="contacto.telefono"></i>
-                        {{ contacto.telefono }}
-                    </h5>
-                    <button class="btn btn-xs btn-danger" v-on:click="borrarContacto(index)">Supprimer</button>
-                </a>
+                        <h5>
+                            <i class="glyphicon glyphicon-calendar" v-if="rdv.debutRdv"></i>
+                            {{ rdv.debutRdv }}
+                        </h5>
+                        <h5>
+                            <i class="glyphicon glyphicon-calendar" v-if="rdv.finRdv"></i>
+                            {{ rdv.finRdv }}
+                        </h5>
+                        <h5>
+                            <i class="glyphicon glyphicon-earphone" v-if="rdv.tel"></i>
+                            {{ rdv.tel }}
+                        </h5>
+                        <button class="btn btn-xs btn-danger" v-on:click="suppRdv(index)">Supprimer</button>
+                    </a>
+                </div>
             </div>
         </div>
     </div>

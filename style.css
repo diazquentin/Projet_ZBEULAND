@@ -659,3 +659,7 @@ body {
 	  width: 100%;
 	  display: block;
 	  font-size: 1.2em; }
+
+	.rdv{
+		margin-bottom: 5px;
+	}
