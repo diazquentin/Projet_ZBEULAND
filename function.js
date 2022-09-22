@@ -12,6 +12,78 @@ function getPractitioner() {
     })
 }
 
+function getDossier() {
+    $.get(BASE_URL +"patient/007", function (result) {
+        $( "#nom" ).text(result.name[0].family);
+        $( "#prenom" ).text(result.name[0].given[0]);
+        $( "#date" ).text(result.birthDate);
+        $( "#adresse" ).text(result.address[0].line[1] + " " + result.address[0].line[0] + ", " + result.address[0].city + ", " + result.address[0].country );
+        $( "#tel" ).text(result.telecom[1].value);
+        $( "#mail" ).text(result.telecom[2].value);
+        console.log(result);
+
+    })
+}
+
+
+function getMessagePatient() {
+    $.get(BASE_URL +"communication?sender.reference=Patient/632b11f2337d8800190ca297&recipient.reference=Practitioner/7", function (result) {
+        
+        for(let i=0; i < result.length; i++){
+            let clone = $( "#template-conversation" ).clone();
+            if(result[i].payload) clone.find(".message").text(result[i].payload[0].contentString);
+            if(result[i].sent) clone.find(".heureMessage").text(result[i].sent);
+            clone.find(".nomPersonne").text("Patient");
+            clone.appendTo( "#conversation" );
+        }
+        console.log(result);
+        $( "#template-conversation" ).remove();
+    })
+}
+
+function getMessageMedecin() {
+    $.get(BASE_URL +"communication?sender.reference=Practitioner/7&recipient.reference=Patient/632b11f2337d8800190ca297", function (result) {
+        
+        for(let i=0; i < result.length; i++){
+            let clone = $( "#template-conversation" ).clone();
+            if(result[i].payload) clone.find(".message").text(result[i].payload[0].contentString);
+            if(result[i].sent) clone.find(".heureMessage").text(result[i].sent);
+            clone.find(".nomPersonne").text("Médecin");
+            clone.appendTo( "#conversation" );
+        }
+        console.log(result);
+        $( "#template-conversation" ).remove();
+    })
+}
+
+function postMessage() {
+
+    
+    let message = {
+        "resourceType": "Communication",
+        "sent": new Date().toISOString(),
+        "recipient": [
+            {
+                "reference": "Practitioner/7"
+            }
+        ],
+        "sender": {
+            "reference": "Patient/632b11f2337d8800190ca297"
+        },
+        "payload": [
+            {
+                "contentString": document.getElementById("input").value
+            }
+        ]
+    };
+
+    console.log(message);
+
+    $.post(BASE_URL + "communication", message, function (result) {
+        console.log(result);
+    });
+}
+
 function getNbPractitioner() {
     $.get(BASE_URL + "practitioner", function (result) {
         $("#nombre-practicien").text(result.length);

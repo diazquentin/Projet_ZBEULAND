@@ -4,26 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Mail</title>
+    <title>rdv</title>
     <link rel="stylesheet" href="style.css">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-        crossorigin="anonymous"></script>
-    <link href='https://unicons.iconscout.com/release/v3.0.6/css/line.css' rel='stylesheet'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.js" crossorigin="anonymous"></script>
 
-    <link href='https://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
-    <link href='https://fonts.googleapis.com/css?family=Lato:400,300' rel='stylesheet' type='text/css'>
-    <link href="https://netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link href='https://unicons.iconscout.com/release/v3.0.6/css/line.css' rel='stylesheet'>
 </head>
 
-<body>
+<body class="align-items-center">
 
     <aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
-        
-        
         <i class="uil-bars close-aside d-md-none d-lg-none" data-close="show-side-navigation1"></i>
         <div class="sidebar-header d-flex justify-content-center align-items-center px-3 py-4">
             <img class="rounded-pill img-fluid" width="65" src="./img/3.png" alt="">
@@ -33,8 +29,6 @@
                 </h5>
             </div>
         </div>
-
-        
 
         <ul class="categories list-unstyled">
             <li class="">
@@ -49,44 +43,33 @@
         </ul>
     </aside>
 
-    <span class="first">
-        Conversation
-    </span>
 
-    <ul id="conversation" class="timeline">
-        <li id="template-conversation">
-            <div class="avatar">
-                <img src="./img/icone.png">
-            </div>
-            <div class="bubble-container">
-                <div class="bubble">
-
-                    <h3 class="nomPersonne"></h3><br/>
-                    <span class="message"></span><br/>
-                    <span class="heureMessage"></span>
+    <div class="container d-flex justify-content-center" id="principal">
+        <div class="col-sm-5" style="margin-left : 50px;">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3>Dossier patient</h3>
                 </div>
-                <div class="arrow"></div>
-                
-                
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Nom : <a id="nom"></a></li>
+                    <li class="list-group-item">Prénom : <a id="prenom"></a></li>
+                    <li class="list-group-item">Date de naissance : <a id="date"></a></li>
+                    <li class="list-group-item">Adresse : <a id="adresse"></a></li>
+                    <li class="list-group-item">N° Téléphone : <a id="tel"></a></li>
+                    <li class="list-group-item">Adresse mail : <a id="mail"></a></li>
+                </ul>
             </div>
-        </li>  
-        <br/>  
-        <label for="name">Message : </label>
-        <input type="text" id="input" name="name" required minlength="1" maxlength="40" size="40">
-        <button onclick="postMessage()">Envoyer</button>
-    </ul>
-    
-    
+        </div>  
+    </div>
 
-</div>
-<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="function.js"></script>
-<script>
-    $(document).ready(function () {
-        getMessagePatient();
-        getMessageMedecin();
-    });
-</script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="function.js"></script>
+    <script>
+        $(document).ready(function () {
+            getDossier();
+        });
+    </script>
+
 </body>
 
 </html>
